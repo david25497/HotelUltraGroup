@@ -48,9 +48,8 @@ namespace HotelUltraGroup.Infrastructure.Data.Repositories
 
             return await _errorBD.EjecutarOperacionDB(async () =>
             {
-                var resultados = await _context.getUserAccess
-                     .FromSqlRaw("EXEC CreateHotel @IdUser, @name , @idCity, @address", idUserParam, nameParam, idCityParam, addressParam)
-                     .ToListAsync();
+                await _context.Database.ExecuteSqlRawAsync("EXEC CreateHotel @IdUser, @name , @idCity, @address", idUserParam, nameParam, idCityParam, addressParam);
+
                 return "Creación Exitosa";
             }, "Error en la creación.");
 

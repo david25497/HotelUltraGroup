@@ -17,7 +17,6 @@ namespace HotelUltraGroup.Infrastructure.Context
         }
         public DbSet<sp_getUserAccess> getUserAccess { get; set; }
         public DbSet<sp_GetHotels> hotels { get; set; }
-
         public DbSet<sp_GetRoomsByHotel> RoomsWithRoomType { get; set; }
         
         protected override void OnModelCreating(ModelBuilder builder)
@@ -25,8 +24,8 @@ namespace HotelUltraGroup.Infrastructure.Context
             base.OnModelCreating(builder);
             
             builder.Entity<sp_getUserAccess>().HasNoKey().ToView(null);
-      
-            
+            builder.Entity<sp_GetHotels>().HasNoKey().ToView(null);
+            builder.Entity<sp_GetRoomsByHotel>().HasNoKey().ToView(null);
             //Aplicamos de forma automatica las configuraciones que se encuentran en la carpeta CONFIGURACIONES
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }

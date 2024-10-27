@@ -35,9 +35,9 @@ namespace HotelUltraGroup.Infrastructure.Data.Repositories
 
             return await _errorBD.EjecutarOperacionDB(async () =>
             {
-                var resultados = await _context.getUserAccess
-                     .FromSqlRaw("EXEC CreateNewUser @username, @password , @idrol, @email", usernameParam, passwordParam, idrolParam, emailParam)
-                     .ToListAsync();
+               
+                await _context.Database.ExecuteSqlRawAsync("EXEC CreateNewUser @username, @password , @idrol, @email", usernameParam, passwordParam, idrolParam, emailParam);
+
                 return "Creación Exitosa";
             }, "No se pudo crear el usuario.");
         }

@@ -1,3 +1,17 @@
-# Ignore bin and obj folders
-bin/
-obj/
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+FileContentIndex/
+v17/
+projectEvaluation/
+
+# Otros archivos de configuración que pueden ser innecesarios
