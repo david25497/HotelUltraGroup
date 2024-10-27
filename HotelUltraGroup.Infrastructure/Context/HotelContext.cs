@@ -18,7 +18,7 @@ namespace HotelUltraGroup.Infrastructure.Context
         public DbSet<sp_getUserAccess> getUserAccess { get; set; }
         public DbSet<sp_GetHotels> hotels { get; set; }
         public DbSet<sp_GetRoomsByHotel> RoomsWithRoomType { get; set; }
-        
+        //Contexto de Hotel
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
