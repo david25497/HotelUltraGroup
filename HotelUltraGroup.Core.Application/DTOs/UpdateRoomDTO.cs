@@ -30,9 +30,6 @@ namespace HotelUltraGroup.Core.Application.DTOs
         [Required(ErrorMessage = "nightlyRate es obligatorio.")]
         public decimal nightlyRate { get; set; }
 
-        [Required(ErrorMessage = "isAvailable es obligatorio.")]
-        public bool isAvailable { get; set; }
-
         [Required(ErrorMessage = "capacity es obligatorio.")]
         public int capacity { get; set; }
 

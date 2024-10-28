@@ -13,10 +13,10 @@ namespace HotelUltraGroup.Core.Application.DTOs
     public class UpdateStatusRoomDTO
     {
         [Required(ErrorMessage = "idHotel es obligatorio")]
-        public int idHotel { get; private set; }
+        public int idHotel { get; set; }
 
         [Required(ErrorMessage = "idRoom es obligatorio")]
-        public int idRoom { get; private set; }
+        public int idRoom { get; set; }
 
         [Required(ErrorMessage = "isAvailable es obligatorio.")]
         public bool isAvailable { get; set; }

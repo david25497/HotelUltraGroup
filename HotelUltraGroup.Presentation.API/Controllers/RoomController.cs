@@ -147,7 +147,7 @@ namespace HotelUltraGroup.Presentation.API.Controllers
 
 
 
-        [HttpPut]
+        [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(IResultAPI<string>))]
         public async Task<IActionResult> AssignTaxToRoomAsync(RoomTaxAssignmentDTO roomTaxAssignmentDTO)
         {
@@ -167,7 +167,7 @@ namespace HotelUltraGroup.Presentation.API.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpDelete]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(IResultAPI<string>))]
         public async Task<IActionResult> RemoveTaxFromRoomAsync(RoomTaxAssignmentDTO roomTaxAssignmentDTO)
         {

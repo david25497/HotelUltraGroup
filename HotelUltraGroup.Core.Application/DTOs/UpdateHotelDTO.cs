@@ -10,7 +10,7 @@ namespace HotelUltraGroup.Core.Application.DTOs
     public class UpdateHotelDTO
     {
         [Required(ErrorMessage = "El Id del hotel es obligatorio")]
-        public int idHotel { get; private set; }
+        public int idHotel { get; set; }
 
         [Required(ErrorMessage = "El nombre es obligatorio.")]
         public string name { get; set; }

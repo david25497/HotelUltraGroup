@@ -12,6 +12,7 @@ namespace HotelUltraGroup.Core.Application.DTOs
         public int idHotel { get; set; }
         public string name { get; set; }
         public int idCity { get; set; }
+        public string nameCity { get; set; }
         public string address { get; set; }
         public bool isAvailable { get; set; }
     }
