@@ -15,9 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelUltraGroup.Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelUltraGroup.Infrastructure", "HotelUltraGroup.Infrastructure\HotelUltraGroup.Infrastructure.csproj", "{CDAB6B8B-2F59-46D6-BE99-B1445EAB66A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelUltraGroup.Core.Application", "HotelUltraGroup.Core.Application\HotelUltraGroup.Core.Application.csproj", "{8E5B997D-B93D-4198-BF75-D7058AC67693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelUltraGroup.Core.Application", "HotelUltraGroup.Core.Application\HotelUltraGroup.Core.Application.csproj", "{8E5B997D-B93D-4198-BF75-D7058AC67693}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelUltraGroup.Core.Domain", "HotelUltraGroup.Core.Domain\HotelUltraGroup.Core.Domain.csproj", "{7408EA1F-4A19-45BB-BFD1-D2CA9DCBF433}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelUltraGroup.Core.Domain", "HotelUltraGroup.Core.Domain\HotelUltraGroup.Core.Domain.csproj", "{7408EA1F-4A19-45BB-BFD1-D2CA9DCBF433}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BD", "BD", "{5FAF7B73-AFFC-446B-9EE6-4EEF9AC9CA82}"
+	ProjectSection(SolutionItems) = preProject
+		BD HotelUltraGroup.SQL = BD HotelUltraGroup.SQL
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +58,7 @@ Global
 		{CDAB6B8B-2F59-46D6-BE99-B1445EAB66A8} = {4ED0E51C-7151-46B9-BD3C-7D5C99B7575A}
 		{8E5B997D-B93D-4198-BF75-D7058AC67693} = {35674946-69BE-4509-A980-D00074C41D46}
 		{7408EA1F-4A19-45BB-BFD1-D2CA9DCBF433} = {35674946-69BE-4509-A980-D00074C41D46}
+		{5FAF7B73-AFFC-446B-9EE6-4EEF9AC9CA82} = {84A6A92B-7B4D-4376-AB12-FAF6BD219FCD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC7DA6AE-E5ED-4112-B043-FD2A1C7A2482}
