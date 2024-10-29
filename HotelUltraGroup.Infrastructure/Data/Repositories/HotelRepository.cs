@@ -62,12 +62,11 @@ namespace HotelUltraGroup.Infrastructure.Data.Repositories
             var nameParam = new SqlParameter("@name", hotel.name) { SqlDbType = SqlDbType.NVarChar };
             var idCityParam = new SqlParameter("@idCity", hotel.idCity) { SqlDbType = SqlDbType.Int };
             var addressParam = new SqlParameter("@address", hotel.address) { SqlDbType = SqlDbType.NVarChar };
-            var isAvailableParam = new SqlParameter("@isAvailable", hotel.isAvailable) { SqlDbType = SqlDbType.Bit };
 
             return await _errorBD.EjecutarOperacionDB(async () =>
             {
-                await _context.Database.ExecuteSqlRawAsync("EXEC UpdateHotel @idHotel, @idUser, @name, @idCity, @address, @isAvailable",
-                    idHotelParam, idUserParam, nameParam, idCityParam, addressParam, isAvailableParam);
+                await _context.Database.ExecuteSqlRawAsync("EXEC UpdateHotel @idHotel, @idUser, @name, @idCity, @address",
+                    idHotelParam, idUserParam, nameParam, idCityParam, addressParam);
 
                 return "Actualización Exitosa";
             }, "Error en la actualizacion");
