@@ -91,6 +91,39 @@ namespace HotelUltraGroup.Infrastructure.Data.Repositories
         }
 
 
+        public async Task<ResultBD<IEnumerable<sp_GetReservationsByHotel>>> GetReservationsByHotel(int idUser, int idHotel)
+        {
+            var idUserParam = new SqlParameter("@userId", idUser) { SqlDbType = SqlDbType.Int };
+            var idHotelParam = new SqlParameter("@hotelId", idHotel) { SqlDbType = SqlDbType.Int };
+
+            return await _errorBD.EjecutarOperacionDB(async () =>
+            {
+                var reservations = await _context.reservationByHotel
+                    .FromSqlRaw("EXEC GetReservationsByUserAndHotel @userId, @hotelId", idUserParam, idHotelParam)
+                    .ToListAsync();
+
+                return reservations.AsEnumerable();
+            }, "Error al obtener las reservas.");
+        }
+
+       
+
+        public async Task<ResultBD<IEnumerable<sp_GetReservationDetail>>> GetReservationDetail(int idUser, int idHotel, int idReservation)
+        {
+            var userIdParam = new SqlParameter("@userId", idUser) { SqlDbType = SqlDbType.Int };
+            var hotelIdParam = new SqlParameter("@hotelId", idHotel) { SqlDbType = SqlDbType.Int };
+            var reservationIdParam = new SqlParameter("@reservationId", idReservation) { SqlDbType = SqlDbType.Int };
+
+            return await _errorBD.EjecutarOperacionDB(async () =>
+            {
+                var reservationDetail = await _context.reservationDetail
+                    .FromSqlRaw("EXEC GetReservationDetail @userId, @hotelId, @reservationId", userIdParam, hotelIdParam, reservationIdParam)
+                    .ToListAsync();
+
+                return reservationDetail.AsEnumerable(); 
+            }, "Error al obtener el detalle de la reserva.");
+        }
+
 
 
     }

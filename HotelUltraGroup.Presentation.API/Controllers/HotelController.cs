@@ -104,6 +104,45 @@ namespace HotelUltraGroup.Presentation.API.Controllers
             }
         }
 
+   
+        [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(IResultAPI<IEnumerable<ListReservationDTO>>))]
+        public async Task<IActionResult> GetReservationsByHotel(int idHotel)
+        {
+            try
+            {
+                var user = HttpContext.User;
+                var idUser = int.Parse(user.FindFirst("Id").Value);
+                var response = await _service.GetReservationsByHotel(idUser, idHotel);
+                return Ok(response);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+
+    
+        [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(IResultAPI<IEnumerable<ListReservationDetailDTO>>))]
+        public async Task<IActionResult> GetReservationDetail(int idHotel, int idReservation)
+        {
+            try
+            {
+                var user = HttpContext.User;
+                var idUser = int.Parse(user.FindFirst("Id").Value);
+                var response = await _service.GetReservationDetail(idUser, idHotel, idReservation);
+                return Ok(response);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+
+
 
     }
 }

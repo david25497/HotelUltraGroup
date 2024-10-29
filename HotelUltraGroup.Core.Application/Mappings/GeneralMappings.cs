@@ -23,6 +23,8 @@ namespace HotelUltraGroup.Core.Application.Mappings
             CreateMap<sp_GetAvailableHotels, ListAvailableHotelsDTO>();
             CreateMap<sp_GetAvailableHotelRooms, ListAvailableHotelRoomsDTO>();
             CreateMap<sp_GetHotelTaxes, ListTaxDTO>();
+            CreateMap<sp_GetReservationsByHotel, ListReservationDTO>();
+            CreateMap<sp_GetReservationDetail, ListReservationDetailDTO>();
         }
 
     }

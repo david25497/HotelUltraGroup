@@ -16,5 +16,9 @@ namespace HotelUltraGroup.Core.Application.Interfaces.Repositories
         Task<ResultBD<string>> CreateHotelAsync(Hotel hotel);
         Task<ResultBD<string>> UpdateHotelAsync(Hotel hotel);
         Task<ResultBD<string>> UpdateStatusHotelAsync(Hotel hotel);
+        Task<ResultBD<IEnumerable<sp_GetReservationsByHotel>>> GetReservationsByHotel(int idUser, int idHotel);
+        Task<ResultBD<IEnumerable<sp_GetReservationDetail>>> GetReservationDetail(int idUser, int idHotel, int idReservation);
+
+
     }
 }

@@ -132,9 +132,53 @@ namespace HotelUltraGroup.Core.Application.Services
             }
         }
 
+        
+        public async Task<IResultAPI<IEnumerable<ListReservationDTO>>> GetReservationsByHotel(int idUser, int idHotel)
+        {
+            try
+            {
+                var result = await _repository.GetReservationsByHotel(idUser,idHotel);
+
+                if (!result.IsSuccess)
+                    return ResultAPI<IEnumerable<ListReservationDTO>>.Fail(result.Message);
+
+                var resultDTO = _mapper.Map<IEnumerable<ListReservationDTO>>(result.Data);
+                
+                
+                if (result.Data.Count()<=0)
+                    return ResultAPI<IEnumerable<ListReservationDTO>>.Success("Sin registros",resultDTO);
+               
+                return ResultAPI<IEnumerable<ListReservationDTO>>.Success(resultDTO);
+            }
+            catch (Exception e)
+            {
+                return ResultAPI<IEnumerable<ListReservationDTO>>.Fail("Se ha producido un error al convertir la información", new List<ListReservationDTO>());
+            }
+        }
+
+    
+        public async Task<IResultAPI<IEnumerable<ListReservationDetailDTO>>> GetReservationDetail(int idUser, int idHotel, int idReservation)
+        {
+            try
+            {
+                var result = await _repository.GetReservationDetail(idUser, idHotel, idReservation);
+
+                if (!result.IsSuccess)
+                    return ResultAPI<IEnumerable<ListReservationDetailDTO>>.Fail(result.Message);
+
+                var resultDTO = _mapper.Map<IEnumerable<ListReservationDetailDTO>>(result.Data);
 
 
+                if (result.Data.Count() <= 0)
+                    return ResultAPI<IEnumerable<ListReservationDetailDTO>>.Success("Sin registros", resultDTO);
 
+                return ResultAPI<IEnumerable<ListReservationDetailDTO>>.Success(resultDTO);
+            }
+            catch (Exception e)
+            {
+                return ResultAPI<IEnumerable<ListReservationDetailDTO>>.Fail("Se ha producido un error al convertir la información", new List<ListReservationDetailDTO>());
+            }
+        }
 
 
     }

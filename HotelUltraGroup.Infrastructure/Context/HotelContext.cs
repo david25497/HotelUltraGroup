@@ -25,8 +25,10 @@ namespace HotelUltraGroup.Infrastructure.Context
         public DbSet<sp_GetCityList> cities { get; set; }
         public DbSet<sp_GetHotelTaxes> hotelTaxes { get; set; }
         public DbSet<sp_CreateReservation> reservationCode { get; set; }
-        
 
+        public DbSet<sp_GetReservationsByHotel> reservationByHotel{ get; set; }
+
+        public DbSet<sp_GetReservationDetail> reservationDetail { get; set; }
 
         //Contexto de Hotel
         protected override void OnModelCreating(ModelBuilder builder)
@@ -43,6 +45,9 @@ namespace HotelUltraGroup.Infrastructure.Context
             builder.Entity<sp_GetCityList>().HasNoKey().ToView(null);
             builder.Entity<sp_GetHotelTaxes>().HasNoKey().ToView(null);
             builder.Entity<sp_CreateReservation>().HasNoKey().ToView(null);
+            builder.Entity<sp_GetReservationsByHotel>().HasNoKey().ToView(null);
+            builder.Entity<sp_GetReservationDetail>().HasNoKey().ToView(null);
+            
             //Aplicamos de forma automatica las configuraciones que se encuentran en la carpeta CONFIGURACIONES
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
