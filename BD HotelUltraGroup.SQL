@@ -1,4 +1,4 @@
-/****** Object:  Database [HotelUltraGroup]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Database [HotelUltraGroup]    Script Date: 29/10/2024 8:21:45 ******/
 CREATE DATABASE [HotelUltraGroup]  (EDITION = 'Basic', SERVICE_OBJECTIVE = 'Basic', MAXSIZE = 1 GB) WITH CATALOG_COLLATION = SQL_Latin1_General_CP1_CI_AS;
 GO
 ALTER DATABASE [HotelUltraGroup] SET ANSI_NULL_DEFAULT OFF 
@@ -45,7 +45,7 @@ GO
 GO
 -- ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 8;
 GO
-/****** Object:  UserDefinedFunction [dbo].[fn_diagramobjects]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  UserDefinedFunction [dbo].[fn_diagramobjects]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,7 +98,7 @@ GO
 	END
 	
 GO
-/****** Object:  Table [dbo].[City]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[City]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -112,7 +112,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DocumentType]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[DocumentType]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -127,7 +127,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Gender]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[Gender]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -141,7 +141,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Guests]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[Guests]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -162,7 +162,7 @@ CREATE TABLE [dbo].[Guests](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HotelInfo]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[HotelInfo]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -180,7 +180,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Reservations]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[Reservations]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -205,7 +205,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Room]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[Room]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -225,7 +225,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RoomTaxDetail]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[RoomTaxDetail]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -240,7 +240,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RoomType]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[RoomType]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -255,7 +255,7 @@ PRIMARY KEY CLUSTERED
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tax]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[Tax]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -272,7 +272,7 @@ CREATE TABLE [dbo].[Tax](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[users]    Script Date: 28/10/2024 22:09:59 ******/
+/****** Object:  Table [dbo].[users]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -350,7 +350,7 @@ GO
 ALTER TABLE [dbo].[Tax]  WITH CHECK ADD FOREIGN KEY([idHotel])
 REFERENCES [dbo].[HotelInfo] ([id])
 GO
-/****** Object:  StoredProcedure [dbo].[AssignTaxToRoom]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[AssignTaxToRoom]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -404,7 +404,7 @@ BEGIN
     VALUES (@idRoom, @idTax);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[CreateHotel]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[CreateHotel]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -437,7 +437,7 @@ BEGIN
     VALUES (@IdUser, @name, @idCity, @address, 1); -- Suponiendo que el hotel está disponible por defecto
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[CreateNewUser]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[CreateNewUser]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -463,7 +463,7 @@ BEGIN
     VALUES (@username, @password, @idrol, @email);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[CreateReservation]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[CreateReservation]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -538,7 +538,7 @@ BEGIN
 
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[CreateRoom]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[CreateRoom]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -574,7 +574,7 @@ BEGIN
     VALUES (@IdHotel,@name, @idRoomType, @Location, @NightlyRate, @IsAvailable, @Capacity);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[CreateTax]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[CreateTax]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -612,7 +612,7 @@ BEGIN
     VALUES (@idHotel, @name, @rate, @description);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetAvailableHotelRooms]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetAvailableHotelRooms]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -646,7 +646,7 @@ BEGIN
       );
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetAvailableHotels]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetAvailableHotels]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -687,7 +687,7 @@ BEGIN
       );  -- Asegurarse de que no haya reservas en conflicto
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetCityList]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetCityList]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -703,7 +703,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[GetDocumentTypeList]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetDocumentTypeList]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -719,7 +719,7 @@ BEGIN
     FROM DocumentType;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetGenderList]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetGenderList]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -734,7 +734,7 @@ BEGIN
     FROM Gender;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetHotels]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetHotels]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -760,7 +760,7 @@ BEGIN
         idUser = @idUser;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetHotelTaxes]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetHotelTaxes]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -792,7 +792,98 @@ BEGIN
     WHERE idHotel = @idHotel;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetRoomsByHotel]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetReservationDetail]    Script Date: 29/10/2024 8:21:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[GetReservationDetail]
+    @reservationId INT,
+    @userId INT,
+    @hotelId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Verificar que el usuario tenga permisos sobre el hotel especificado
+    IF EXISTS (
+        SELECT 1
+        FROM HotelInfo h
+        WHERE h.id = @hotelId
+          AND h.idUser = @userId
+    )
+    BEGIN
+        -- Obtener detalles de la reserva, habitación, capacidad y calcular el valor total y valor total con impuestos
+        SELECT 
+            r.id AS ReservationId,
+            r.reservationCode AS ReservationCode,
+            r.checkInDate AS CheckInDate,
+            r.checkOutDate AS CheckOutDate,
+            r.fullName AS GuestName,
+            r.reservationEmail AS GuestEmail,
+            ro.name AS RoomName,
+            ro.nightlyRate AS NightlyRate,
+            ro.capacity AS MaxGuestsAllowed,
+            ro.location AS RoomLocation,
+            DATEDIFF(DAY, r.checkInDate, r.checkOutDate) AS StayDuration,
+            -- Calcular el valor total sin impuestos
+            DATEDIFF(DAY, r.checkInDate, r.checkOutDate) * ro.nightlyRate AS ValorTotal,
+            -- Calcular el valor total con impuestos
+            DATEDIFF(DAY, r.checkInDate, r.checkOutDate) * ro.nightlyRate * 
+            (1 + ISNULL(SUM(t.rate / 100), 0)) AS ValorTotalConImpuestos
+        FROM 
+            Reservations r
+        INNER JOIN 
+            Room ro ON r.idRoom = ro.id
+        LEFT JOIN 
+            RoomTaxDetail rtd ON ro.id = rtd.idRoom
+        LEFT JOIN 
+            Tax t ON rtd.idTax = t.id
+        WHERE 
+            r.id = @reservationId
+            AND r.idHotel = @hotelId
+        GROUP BY 
+            r.id, r.reservationCode, r.checkInDate, r.checkOutDate, r.fullName, r.reservationEmail,
+            ro.name, ro.nightlyRate, ro.capacity, ro.location;
+    END
+    ELSE
+    BEGIN
+        -- Si el usuario no tiene permiso, retorna un mensaje de error
+        RAISERROR ('No tienes permisos para ver los detalles de esta reserva.', 16, 1);
+    END
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[GetReservationsByUserAndHotel]    Script Date: 29/10/2024 8:21:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[GetReservationsByUserAndHotel]
+    @userId INT,
+    @hotelId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        r.id AS idReservation,
+        r.reservationCode AS reservationCode,
+        r.checkInDate AS checkInDate,
+        r.checkOutDate AS checkOutDate,
+        r.fullName AS fullName,
+        r.reservationEmail AS reservationEmail
+    FROM 
+        Reservations r
+    INNER JOIN 
+        HotelInfo h ON r.idHotel = h.id    
+    WHERE 
+        h.idUser = @userId
+        AND h.id = @hotelId
+    ORDER BY 
+        r.reservationDate DESC;
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[GetRoomsByHotel]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -832,7 +923,7 @@ BEGIN
         r.idHotel = @idHotel;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetUserAccess]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[GetUserAccess]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -849,7 +940,7 @@ BEGIN
     WHERE username = @username AND  password = @password COLLATE Latin1_General_BIN;  
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[RegisterGuest]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[RegisterGuest]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -930,7 +1021,7 @@ BEGIN
     VALUES (@firstName, @lastName, @idGender, @idDocumentType, @documentNumber, @email, @phone, @idReservation);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[RemoveTaxFromRoom]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[RemoveTaxFromRoom]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -971,7 +1062,7 @@ BEGIN
     WHERE idRoom = @idRoom AND idTax = @idTax;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_alterdiagram]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[sp_alterdiagram]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1042,7 +1133,7 @@ GO
 	END
 	
 GO
-/****** Object:  StoredProcedure [dbo].[sp_creatediagram]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[sp_creatediagram]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1106,7 +1197,7 @@ GO
 	END
 	
 GO
-/****** Object:  StoredProcedure [dbo].[sp_dropdiagram]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[sp_dropdiagram]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1153,7 +1244,7 @@ GO
 	END
 	
 GO
-/****** Object:  StoredProcedure [dbo].[sp_helpdiagramdefinition]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[sp_helpdiagramdefinition]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1199,7 +1290,7 @@ GO
 	END
 	
 GO
-/****** Object:  StoredProcedure [dbo].[sp_helpdiagrams]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[sp_helpdiagrams]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1236,7 +1327,7 @@ GO
 	END
 	
 GO
-/****** Object:  StoredProcedure [dbo].[sp_renamediagram]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[sp_renamediagram]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1304,7 +1395,7 @@ GO
 	END
 	
 GO
-/****** Object:  StoredProcedure [dbo].[sp_upgraddiagrams]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[sp_upgraddiagrams]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1370,7 +1461,7 @@ GO
 	END
 	
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateHotel]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[UpdateHotel]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1409,7 +1500,7 @@ BEGIN
     WHERE id = @idHotel;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateRoom]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[UpdateRoom]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1451,7 +1542,7 @@ BEGIN
     WHERE Id = @IdRoom;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateRoomStatus]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[UpdateRoomStatus]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1483,7 +1574,7 @@ BEGIN
     WHERE Id = @idRoom AND IdHotel = @idHotel;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateStatusHotel]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[UpdateStatusHotel]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1516,7 +1607,7 @@ BEGIN
     WHERE id = @idHotel;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateTax]    Script Date: 28/10/2024 22:10:00 ******/
+/****** Object:  StoredProcedure [dbo].[UpdateTax]    Script Date: 29/10/2024 8:21:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
