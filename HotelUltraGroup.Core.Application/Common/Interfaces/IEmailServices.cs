@@ -6,6 +6,6 @@ namespace HotelUltraGroup.Core.Application.Common.Interfaces
 {
     public interface IEmailServices
     {
-        bool EnviarEmailDePedidoConfirmado(string _usuario, string _emailDestino);
+        bool EnviarEmailDePedidoConfirmado(string usuario, string emailDestino, string mensaje);
     }
 }

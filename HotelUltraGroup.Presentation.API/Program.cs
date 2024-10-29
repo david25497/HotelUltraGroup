@@ -15,19 +15,21 @@ using HotelUltraGroup.Infrastructure.Common;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+#region Services Configuration
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-#region Contextos
+// Contexts
+#region Contexts
 builder.Services.AddDbContext<HotelContext>(opt =>
 {
     opt.UseSqlServer("name=DefaultConnection");
 });
 #endregion
 
+// Authorization Policies
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminPolicy", policy =>
@@ -37,6 +39,7 @@ builder.Services.AddAuthorization(options =>
         policy.RequireClaim(ClaimTypes.Role, "User"));
 });
 
+// Authentication
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddAuthentication(auth =>
@@ -45,7 +48,7 @@ builder.Services.AddAuthentication(auth =>
     auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
-    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
         ValidateIssuer = true,
@@ -56,46 +59,41 @@ builder.Services.AddAuthentication(auth =>
         ValidateLifetime = true,
         ClockSkew = TimeSpan.Zero,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AuthSettings:key"])),
-
     };
-}
-);
+});
+#endregion
 
+#region Dependency Injection
 builder.Services.AddTransient<ITokenServices, TokenServices>();
 builder.Services.AddTransient<IEmailServices, EmailServices>();
-
-
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 builder.Services.AddScoped<IHotelService, HotelService>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<IRoomService, RoomService>();
-
-builder.Services.AddScoped<ErrorBD>();
+builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddTransient<ErrorBD>();
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Email"));
+#endregion
 
 #region AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-//var mapperConfig = new MapperConfiguration(mapperConfig =>
-//{
-//    mapperConfig.AddProfile(new RolesMappings());
-//});
-//IMapper mapper = mapperConfig.CreateMapper();
-//builder.Services.AddSingleton(mapper);
-
 #endregion
 
 var app = builder.Build();
 
+#region CORS Configuration
 app.UseCors(x => x
-.AllowAnyMethod()
-.AllowAnyHeader()
-.SetIsOriginAllowed(origin => true) // allow any origin  
-.AllowCredentials());
-
-
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true) // allow any origin  
+    .AllowCredentials());
+#endregion
 
 // Configure the HTTP request pipeline.
+#region HTTP Pipeline Configuration
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -107,11 +105,10 @@ if (app.Environment.IsProduction())
     app.UseSwaggerUI();
 }
 
-
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
+#endregion
 
 app.Run();

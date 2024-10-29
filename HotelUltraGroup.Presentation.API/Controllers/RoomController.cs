@@ -187,5 +187,23 @@ namespace HotelUltraGroup.Presentation.API.Controllers
             }
         }
 
+
+        [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(IResultAPI<IEnumerable<ListTaxDTO>>))]
+        public async Task<IActionResult> GetHotelTaxesAsync(int idHotel)
+        {
+            try
+            {
+                var user = HttpContext.User;
+                var idUser = int.Parse(user.FindFirst("Id").Value);
+                var response = await _service.GetHotelTaxesAsync(idUser, idHotel);
+                return Ok(response);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
     }
 }

@@ -5,6 +5,7 @@ using HotelUltraGroup.Core.Application.DTOs;
 using HotelUltraGroup.Core.Application.Interfaces.Repositories;
 using HotelUltraGroup.Core.Application.Interfaces.Services;
 using HotelUltraGroup.Core.Domain.Entities;
+using HotelUltraGroup.Core.Domain.Stored_Procedure;
 using HotelUltraGroup.Core.Domain.ValueObjets;
 using RestSharp;
 using System;
@@ -237,8 +238,24 @@ namespace HotelUltraGroup.Core.Application.Services
             }
         }
 
+      
+        public async Task<IResultAPI<IEnumerable<ListTaxDTO>>> GetHotelTaxesAsync(int idUser, int idHotel)
+        {
+            try
+            {
+                var result = await _repository.GetHotelTaxesAsync(idUser, idHotel);
 
+                if (!result.IsSuccess)
+                    return ResultAPI<IEnumerable<ListTaxDTO>>.Fail(result.Message);
 
+                var resultDTO = _mapper.Map<IEnumerable<ListTaxDTO>>(result.Data);
+                return ResultAPI<IEnumerable<ListTaxDTO>>.Success(resultDTO);
+            }
+            catch (Exception e)
+            {
+                return ResultAPI<IEnumerable<ListTaxDTO>>.Fail("Se ha producido un error al convertir la información", new List<ListTaxDTO>());
+            }
+        }
 
     }
 }

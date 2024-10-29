@@ -117,7 +117,7 @@ namespace HotelUltraGroup.Infrastructure.Data.Repositories
             }, "Error en la creación");
         }
 
-        public async Task<ResultBD<string>> UpdateTaxAsync(int idUser,Tax tax)
+        public async Task<ResultBD<string>> UpdateTaxAsync(int idUser, Tax tax)
         {
             var idUserParam = new SqlParameter("@idUser", idUser) { SqlDbType = SqlDbType.Int };
             var idTaxParam = new SqlParameter("@idTax", tax.idTax) { SqlDbType = SqlDbType.Int };
@@ -136,7 +136,7 @@ namespace HotelUltraGroup.Infrastructure.Data.Repositories
         }
 
 
-        public async Task<ResultBD<string>> AssignTaxToRoomAsync(int idUser, int idHotel , RoomTaxDetail roomTaxDetail)
+        public async Task<ResultBD<string>> AssignTaxToRoomAsync(int idUser, int idHotel, RoomTaxDetail roomTaxDetail)
         {
             var idUserParam = new SqlParameter("@idUser", idUser) { SqlDbType = SqlDbType.Int };
             var idRoomParam = new SqlParameter("@idRoom", roomTaxDetail.idRoom) { SqlDbType = SqlDbType.Int };
@@ -168,8 +168,20 @@ namespace HotelUltraGroup.Infrastructure.Data.Repositories
             }, "Error en la actualizacion");
         }
 
+        public async Task<ResultBD<IEnumerable<sp_GetHotelTaxes>>> GetHotelTaxesAsync(int idUser, int idHotel)
+        {
+            var idUserParam = new SqlParameter("@idUser", idUser) { SqlDbType = SqlDbType.Int };
+            var idHotelParam = new SqlParameter("@idHotel", idHotel) { SqlDbType = SqlDbType.Int };
 
+            return await _errorBD.EjecutarOperacionDB(async () =>
+            {
+                var hotels = await _context.hotelTaxes
+                    .FromSqlRaw("EXEC GetHotelTaxes @idHotel, @idUser", idHotelParam, idUserParam)
+                    .ToListAsync();
 
+                return hotels.AsEnumerable();
+            }, "Error al obtener las habitaciones.");
+        }
 
     }
 

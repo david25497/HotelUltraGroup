@@ -20,5 +20,6 @@ namespace HotelUltraGroup.Core.Application.Interfaces.Services
         Task<IResultAPI<string>> UpdateTaxAsync(int idUser, UpdateTaxDTO updateTaxDTO);
         Task<IResultAPI<string>> AssignTaxToRoomAsync(int idUser,  RoomTaxAssignmentDTO roomTaxAssignmentDTO);
         Task<IResultAPI<string>> RemoveTaxFromRoomAsync(int idUser, RoomTaxAssignmentDTO roomTaxAssignmentDTO);
+        Task<IResultAPI<IEnumerable<ListTaxDTO>>> GetHotelTaxesAsync(int idUser, int idHotel);
     }
 }
