@@ -1,7 +1,7 @@
 # Hotel Ultra Group API
 
 ## Descripción
-Este proyecto es parte de una prueba para una posición de programador backend. Aunque aún no está completamente finalizado, sirve como una muestra de mis conocimientos y habilidades en el desarrollo de aplicaciones backend orientadas a dominios.
+Este proyecto sirve como una muestra de mis conocimientos y habilidades en el desarrollo de aplicaciones backend orientadas a dominios.
 
 ## Tecnologías y Herramientas
 - **Base de Datos**: MS SQL Server
